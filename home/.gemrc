@@ -1,0 +1,9 @@
+---
+:verbose: true
+:backtrace: false
+:benchmark: false
+:sources:
+- http://gems.github.com
+- http://rubygems.org
+:update_sources: true
+gem: --no-ri --no-rdoc
