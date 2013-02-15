@@ -7,11 +7,16 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 
-begin
-  %w(rubygems pry).each{|lib| require lib}
 
-  Pry.start
-  exit
-rescue LoadError => e
+%w(rubygems pry).each do |gem|
+  begin
+    require gem
+  rescue LoadError => e
+  end
 end
 
+begin
+  Pry.init
+rescue => e
+  print "Could not init Pry: #{e.message}"
+end
