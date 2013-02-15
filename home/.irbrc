@@ -8,7 +8,7 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 
-%w(rubygems pry).each do |gem|
+%w(rubygems pry wirble).each do |gem|
   begin
     require gem
   rescue LoadError => e
@@ -19,4 +19,10 @@ begin
   Pry.init
 rescue => e
   print "Could not init Pry: #{e.message}"
+end
+
+begin
+  %w{init colorize}.each { |str| Wirble.send(str) }
+rescue => e
+  print "There was a problem with Wirble: #{e.message}"
 end
