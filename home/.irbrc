@@ -18,11 +18,11 @@ end
 begin
   Pry.init
 rescue => e
-  print "Could not init Pry: #{e.message}"
+  $stderr.puts "Could not init Pry: #{e.message}"
 end
 
 begin
   %w{init colorize}.each { |str| Wirble.send(str) }
 rescue => e
-  print "There was a problem with Wirble: #{e.message}"
+  $stderr.puts "There was a problem with Wirble: #{e.message}"
 end
