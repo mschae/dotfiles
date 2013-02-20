@@ -21,7 +21,7 @@ class String
   end
 end
 
-%w(rubygems pry wirble hirb awesome_print).each do |gem|
+%w(rubygems pry hirb awesome_print).each do |gem|
   begin
     require gem
   rescue LoadError => e
