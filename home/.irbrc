@@ -35,7 +35,7 @@ IRB.conf[:PROMPT_MODE] = :SIMPLE
 %w(rubygems pry wirble hirb awesome_print).each do |gem|
   begin
     require gem
-  rescue LoadError =>
+  rescue LoadError => e
     $stderr.puts "Could not load gem #{gem} - not installed?".red
     $stderr.puts "gem install #{gem}".red
   end
