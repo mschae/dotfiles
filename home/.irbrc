@@ -1,4 +1,28 @@
 #!/usr/bin/ruby
+
+class String
+  # colorization
+  def colorize(color_code)
+    "\e[#{color_code}m#{self}\e[0m"
+  end
+
+  def red
+    colorize(31)
+  end
+
+  def green
+    colorize(32)
+  end
+
+  def yellow
+    colorize(33)
+  end
+
+  def pink
+    colorize(35)
+  end
+end
+
 require 'irb/completion'
 require 'irb/ext/save-history'
 
@@ -18,11 +42,11 @@ end
 begin
   Pry.init
 rescue => e
-  $stderr.puts "Could not init Pry: #{e.message}"
+  $stderr.puts "Could not init Pry: #{e.message}".red
 end
 
 begin
   %w{init colorize}.each { |str| Wirble.send(str) }
 rescue => e
-  $stderr.puts "There was a problem with Wirble: #{e.message}"
+  $stderr.puts "There was a problem with Wirble: #{e.message}".red
 end
