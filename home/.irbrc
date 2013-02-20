@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby -wKU
 
 class String
   # colorization
@@ -32,17 +32,20 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 
-%w(rubygems pry wirble).each do |gem|
+%w(rubygems pry wirble hirb awesome_print).each do |gem|
   begin
     require gem
-  rescue LoadError => e
+  rescue LoadError =>
+    $stderr.puts "Could not load gem #{gem} - not installed?".red
+    $stderr.puts "gem install #{gem}".red
   end
 end
 
 begin
   Pry.init
+  AwesomePrint.pry
 rescue => e
-  $stderr.puts "Could not init Pry: #{e.message}".red
+  $stderr.puts "Could not init Pry or AwesomePrint: #{e.message}".red
 end
 
 begin
