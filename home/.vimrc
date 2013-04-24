@@ -7,7 +7,6 @@ let mapleader = ','
 
 set nocompatible      " Do not be compatible with Vi - be iMproved
 
-set number            " Enable line numbers
 set ruler             " Enable the bar that shows you in which position your cursor is within the file
 set laststatus=2      " Always show status bar
 
@@ -35,10 +34,10 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 source ~/.vim/Vundlefile
+source ~/.vim/mappings.vim
 
 colorscheme solarized
 
 " Plugin settings
-let g:CommandTMaxFiles=25000
 let g:vundle_default_git_proto = 'git'
 
