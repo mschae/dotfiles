@@ -3,6 +3,9 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+map <leader>t :TlistToggle<CR>
+
 ""
 "" General Mappings (Normal, Visual, Operator-pending)
 ""
@@ -46,10 +49,6 @@ nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
-
-" Map the arrow keys to be based on display lines, not physical lines
-map <Down> gj
-map <Up> gk
 
 " Toggle hlsearch with <leader>hs
 nmap <leader>hs :set hlsearch! hlsearch?<CR>
