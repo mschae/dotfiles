@@ -6,7 +6,7 @@ endif
 let mapleader = ','
 
 set nocompatible      " Do not be compatible with Vi - be iMproved
-
+set number
 set ruler             " Enable the bar that shows you in which position your cursor is within the file
 set laststatus=2      " Always show status bar
 
@@ -31,8 +31,7 @@ set nowritebackup
 source ~/.vim/Vundlefile
 source ~/.vim/mappings.vim
 
+let g:Powerline_symbols = 'fancy'
+set guifont=Inconsolata\ for\ Powerline:h13
 colorscheme solarized
-
-" Plugin settings
-let g:vundle_default_git_proto = 'git'
 
