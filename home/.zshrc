@@ -13,8 +13,11 @@ if [[ `hostname -s` = ms2MacBookPro ]]; then
   # Oracle Setup
   export ORACLE_HOME=/opt/oracle/instantclient_10_2
   export DYLD_LIBRARY_PATH=$ORACLE_HOME
-  
+
   export NLS_LANG=GERMAN_GERMANY.UTF8
 
+fi
+
+if [[ `uname` = Darwin ]]; then
   export CONFIGURE_OPTS=--with-readline-dir=`brew --prefix readline`
 fi
