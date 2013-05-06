@@ -1,7 +1,11 @@
 " Automatically broadcast changes to this file to all active vim instances
 if has("autocmd")
-  autocmd bufwritepost .vimrc source ~/.vimrc
+  autocmd BufWritePost .vimrc source ~/.vimrc
+  autocmd BufWritePost Vundlefile source ~/.vim/Vundlefile
+  autocmd BufWritePre * :%s/\s\+$//e
 endif
+
+set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 
 let mapleader = ','
 
@@ -18,14 +22,16 @@ set expandtab
 set list listchars=tab:\ \ ,trail:·
 
 " Searching
-set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
-" Turn off backups (Vim's *.swp files)
-set nobackup
-set nowritebackup
+" Centralize backups, swapfiles and undo history
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+  set undodir=~/.vim/undo
+endif
 
 
 source ~/.vim/Vundlefile
