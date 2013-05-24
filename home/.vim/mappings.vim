@@ -4,7 +4,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-map <leader>t :TlistToggle<CR>
+map <leader>t :TagbarToggle<CR>
 
 ""
 "" General Mappings (Normal, Visual, Operator-pending)
@@ -24,6 +24,9 @@ nmap <leader>l mQviwu`Q
 " upper/lower first char of word
 nmap <leader>U mQgewvU`Q
 nmap <leader>L mQgewvu`Q
+
+" quote current word
+nmap <leader>q ciw'<C-r>"'
 
 " cd to the directory containing the file in the buffer
 nmap <silent> <leader>cd :lcd %:h<CR>
@@ -118,7 +121,7 @@ else
 
   imap <A-]> <Esc>>>i
   imap <A-[> <Esc><<i
- 
+
   " Bubble single lines
   nmap <C-Up> [e
   nmap <C-Down> ]e

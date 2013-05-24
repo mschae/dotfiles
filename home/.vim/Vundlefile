@@ -16,7 +16,7 @@ Bundle 'tpope/vim-dispatch'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'klen/vim-taglist-plus'
+Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
 
 " Visualization
