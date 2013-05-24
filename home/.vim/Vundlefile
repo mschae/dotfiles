@@ -17,6 +17,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'klen/vim-taglist-plus'
+Bundle 'scrooloose/nerdtree'
 
 " Visualization
 Bundle 'altercation/vim-colors-solarized'
