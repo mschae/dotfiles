@@ -2,6 +2,7 @@
 if has("autocmd")
   autocmd BufWritePost .vimrc source ~/.vimrc
   autocmd BufWritePost Vundlefile source ~/.vim/Vundlefile
+  autocmd BufWritePost mappings.vim source ~/.vim/mappings.vim
   autocmd BufWritePre * :%s/\s\+$//e
 endif
 
