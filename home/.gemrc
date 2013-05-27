@@ -1,9 +1,11 @@
 ---
-:verbose: true
 :backtrace: false
 :benchmark: false
+:bulk_threshold: 1000
 :sources:
 - http://gems.github.com
 - http://rubygems.org
+- http://gems.fuchs-gewuerze.local/
 :update_sources: true
+:verbose: true
 gem: --no-ri --no-rdoc

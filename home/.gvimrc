@@ -1,3 +1,3 @@
 if has("autocmd")
-  autocmd vimenter* NERDTree
+  autocmd vimenter * NERDTree
 endif
