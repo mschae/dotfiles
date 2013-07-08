@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-plugins=(rails3 git ruby osx cloudapp sublime mschae)
+plugins=(rails4 git ruby osx cloudapp sublime mschae)
 
 source $ZSH/oh-my-zsh.sh
 eval "$(hub alias -s)"
