@@ -38,8 +38,8 @@ endif
 source ~/.vim/Vundlefile
 source ~/.vim/mappings.vim
 
-let g:Powerline_symbols = 'fancy'
-set guifont=Inconsolata\ for\ Powerline:h13
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set guifont=Inconsolata-dz\ for\ Powerline:h11
 colorscheme solarized
 
 if executable('coffeetags')

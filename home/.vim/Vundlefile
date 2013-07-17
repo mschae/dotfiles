@@ -22,7 +22,7 @@ Bundle 'scrooloose/nerdtree'
 " Visualization
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'itspriddle/ZoomWin'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline'
 
 " Language specifics
 Bundle 'tpope/vim-rails.git'
