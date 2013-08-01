@@ -18,6 +18,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/camelcasemotion'
 
 " Visualization
 Bundle 'altercation/vim-colors-solarized'
