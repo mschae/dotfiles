@@ -42,6 +42,10 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set guifont=Inconsolata-dz\ for\ Powerline:h11
 colorscheme solarized
 
+let g:syntastic_check_on_open=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
         \ 'ctagsbin' : 'coffeetags',

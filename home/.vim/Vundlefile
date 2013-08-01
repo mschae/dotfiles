@@ -39,6 +39,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'godlygeek/tabular'
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on      " required!
 "
