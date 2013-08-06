@@ -19,4 +19,5 @@ fi
 if [[ `uname` = Darwin ]]; then
   # make sure ruby compiles with the right readline
   export CONFIGURE_OPTS=--with-readline-dir=`brew --prefix readline`
+  export PATH=`npm config get prefix`/bin:$PATH
 fi
