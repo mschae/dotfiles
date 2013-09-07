@@ -53,9 +53,6 @@ nmap <leader>l mQviwu`Q
 nmap <leader>U mQgewvU`Q
 nmap <leader>L mQgewvu`Q
 
-" quote current word
-nmap <leader>q ciw'<C-r>"'
-
 " cd to the directory containing the file in the buffer
 nmap <silent> <leader>cd :lcd %:h<CR>
 

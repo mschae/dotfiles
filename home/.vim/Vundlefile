@@ -19,6 +19,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/camelcasemotion'
+Bundle 'tpope/vim-surround'
 
 " Visualization
 Bundle 'altercation/vim-colors-solarized'
