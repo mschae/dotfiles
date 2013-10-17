@@ -1,5 +1,6 @@
 [user]
 	name = Michael Schaefermeyer
+	email = michael.schaefermeyer@gmail.com
 [mergetool]
 	prompt = false
 [difftool "Kaleidoscope"]
@@ -15,8 +16,14 @@
 	tool = Kaleidoscope
 [core]
 	editor = /usr/bin/vim
-	excludesfile = /Users/ms2/.gitignore_global
+	excludesfile = /opt/boxen/config/git/gitignore
 [push]
 	default = current
 [branch "master"]
   mergeoptions = --no-ff
+
+[credential]
+	helper = /opt/boxen/bin/boxen-git-credential
+
+[hub]
+protocol = https

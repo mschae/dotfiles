@@ -34,13 +34,21 @@ if exists("&undodir")
   set undodir=~/.vim/undo
 endif
 
+" Mouse support
+if has("mouse")
+  set mouse=a
+  set ttymouse=xterm2
+endif
+
 
 source ~/.vim/Vundlefile
 source ~/.vim/mappings.vim
 
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set guifont=Inconsolata-dz\ for\ Powerline:h11
-colorscheme solarized
+color solarized
+
+syntax on
 
 let g:syntastic_check_on_open=1
 let g:syntastic_error_symbol='✗'

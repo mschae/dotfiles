@@ -15,3 +15,8 @@ else
   if which hub > /dev/null; then eval "$(hub alias -s)"; fi
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
+
+eval "$(rbenv init -)"
+
+# added by travis gem
+source /Users/michaelschaefermeyer/.travis/travis.sh
