@@ -16,7 +16,7 @@ else
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
 
-eval "$(rbenv init -)"
-
 # added by travis gem
 source /Users/michaelschaefermeyer/.travis/travis.sh
+
+export DISABLE_AUTO_TITLES=true

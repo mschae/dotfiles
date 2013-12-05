@@ -8,12 +8,6 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
-" Shortcuts for switching windows
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 " Replacements to honor _ as word spererator
 map w <Plug>CamelCaseMotion_w
 map b <Plug>CamelCaseMotion_b

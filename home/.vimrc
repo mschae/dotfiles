@@ -4,9 +4,14 @@ if has("autocmd")
   autocmd BufWritePost Vundlefile source ~/.vim/Vundlefile
   autocmd BufWritePost mappings.vim source ~/.vim/mappings.vim
   autocmd BufWritePre * :%s/\s\+$//e
+  autocmd vimenter * NERDTree
 endif
 
+let NERDTreeShowHidden=1
+
 set listchars=nbsp:¬,extends:»,precedes:«,trail:•
+
+set bs=2
 
 let mapleader = ','
 
@@ -49,6 +54,8 @@ set guifont=Inconsolata-dz\ for\ Powerline:h11
 color solarized
 
 syntax on
+
+set clipboard=unnamed
 
 let g:syntastic_check_on_open=1
 let g:syntastic_error_symbol='✗'
