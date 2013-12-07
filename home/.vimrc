@@ -51,7 +51,11 @@ source ~/.vim/mappings.vim
 
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set guifont=Inconsolata-dz\ for\ Powerline:h11
-color solarized
+
+try
+  color solarized
+catch
+endtry
 
 syntax on
 
