@@ -1,0 +1,11 @@
+# ~/.tmuxinator/breport.yml
+
+name: boxen
+root: /opt/boxen/repo
+
+windows:
+  - editor:
+      layout: even-vertical
+      panes:
+        - vim
+        -

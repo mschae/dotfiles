@@ -1,0 +1,33 @@
+# ~/.tmuxinator/breport.yml
+
+name: breport
+root: ~/src/breport
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+windows:
+  - editor:
+      layout: even-vertical
+      panes:
+        - vim
+        - bundle exec guard
+  - console:
+      layout: even-vertical
+      panes:
+        - bundle exec script/console
+        -
+  - foreman:
+      layout: even-vertical
+      panes:
+        - bundle exec foreman start
+        - tail -f log/development.log
+
