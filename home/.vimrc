@@ -1,11 +1,22 @@
 " Automatically broadcast changes to this file to all active vim instances
 if has("autocmd")
+  " Apply changes to vimconfig automatically
   autocmd BufWritePost .vimrc source ~/.vimrc
   autocmd BufWritePost Vundlefile source ~/.vim/Vundlefile
   autocmd BufWritePost mappings.vim source ~/.vim/mappings.vim
+
+  " Automatically delete trailing whitespaces
   autocmd BufWritePre * :%s/\s\+$//e
+
+  " Load Nerdtree upon opening vim
   autocmd vimenter * NERDTree
 endif
+
+" Be diligent about the 80 column rule
+match ErrorMsg '\%>80v.\+'
+set colorcolumn=80
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 let NERDTreeShowHidden=1
 
@@ -64,6 +75,8 @@ set clipboard=unnamed
 let g:syntastic_check_on_open=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+
+let g:tagbar_ctags_bin='/opt/boxen/homebrew/bin/ctags'
 
 if executable('coffeetags')
   let g:tagbar_type_coffee = {

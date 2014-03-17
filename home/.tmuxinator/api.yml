@@ -1,7 +1,7 @@
 # ~/.tmuxinator/breport.yml
 
-name: cms
-root: ~/src/cms
+name: api
+root: ~/src/api
 
 # Optional tmux socket
 # socket_name: foo
@@ -19,12 +19,12 @@ windows:
       layout: even-vertical
       panes:
         - vim
-        -
+        - bundle exec guard
   - console:
       layout: even-vertical
       panes:
         - bundle exec rails console
-        - bundle exec guard
+        -
   - foreman:
       layout: even-vertical
       panes:

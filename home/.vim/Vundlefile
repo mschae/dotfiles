@@ -20,6 +20,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/camelcasemotion'
 Bundle 'tpope/vim-surround'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " Visualization
 Bundle 'altercation/vim-colors-solarized'
@@ -32,6 +33,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
 Bundle 'puppetlabs/puppet-syntax-vim'
+Bundle 'elixir-lang/vim-elixir'
 
 " Git
 Bundle 'tpope/vim-fugitive'

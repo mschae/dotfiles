@@ -1,7 +1,7 @@
 # ~/.tmuxinator/breport.yml
 
-name: cms
-root: ~/src/cms
+name: vimion
+root: ~/src/vimion
 
 # Optional tmux socket
 # socket_name: foo
@@ -19,15 +19,5 @@ windows:
       layout: even-vertical
       panes:
         - vim
-        -
-  - console:
-      layout: even-vertical
-      panes:
-        - bundle exec rails console
         - bundle exec guard
-  - foreman:
-      layout: even-vertical
-      panes:
-        - bundle exec foreman start
-        - tail -f log/development.log
 

@@ -1,11 +1,11 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-plugins=(rails4 git ruby osx cloudapp sublime mschae)
+plugins=(rails git ruby osx cloudapp sublime mschae)
 
 source $ZSH/oh-my-zsh.sh
 
-if [ -e ~/.travis/travis.sh ]; then
+if [ -f ~/.travis/travis.sh ]; then
   source ~/.travis/travis.sh
 fi
 
@@ -16,7 +16,5 @@ else
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
 
-# added by travis gem
-source /Users/michaelschaefermeyer/.travis/travis.sh
-
 export DISABLE_AUTO_TITLES=true
+export PATH=$PATH:~/bin
