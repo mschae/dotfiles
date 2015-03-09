@@ -21,6 +21,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/camelcasemotion'
 Bundle 'tpope/vim-surround'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
 
 " Visualization
 Bundle 'altercation/vim-colors-solarized'
@@ -34,6 +36,9 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'slim-template/vim-slim'
+Bundle 'vim-scripts/pig.vim'
+Bundle 'fatih/vim-go'
 
 " Git
 Bundle 'tpope/vim-fugitive'

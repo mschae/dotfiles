@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 " Automatically broadcast changes to this file to all active vim instances
 if has("autocmd")
   " Apply changes to vimconfig automatically
@@ -10,7 +13,18 @@ if has("autocmd")
 
   " Load Nerdtree upon opening vim
   autocmd vimenter * NERDTree
+
+  " Toggle between relative and absolute line numbering
+  autocmd FocusLost * :set number
+  autocmd FocusGained * :set relativenumber
+
+  autocmd InsertEnter * :set number
+  autocmd InsertLeave * :set relativenumber
+
 endif
+
+" Default to relative line numbering
+set relativenumber
 
 " Be diligent about the 80 column rule
 match ErrorMsg '\%>80v.\+'
@@ -32,7 +46,6 @@ set ruler             " Enable the bar that shows you in which position your cur
 set laststatus=2      " Always show status bar
 
 " Whitespace stuff
-set nowrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -45,10 +58,10 @@ set smartcase
 
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
 if exists("&undodir")
   set undodir=~/.vim/undo
 endif
+set noswapfile
 
 " Mouse support
 if has("mouse")
@@ -70,11 +83,11 @@ endtry
 
 syntax on
 
-set clipboard=unnamed
-
 let g:syntastic_check_on_open=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+let g:syntastic_error_symbol='x'
+let g:syntastic_warning_symbol='!'
+let g:syntastic_ruby_checkers=['mri', 'rubocop']
+
 
 let g:tagbar_ctags_bin='/opt/boxen/homebrew/bin/ctags'
 
