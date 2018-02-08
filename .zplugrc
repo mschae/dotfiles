@@ -1,0 +1,27 @@
+source ~/.zplug/init.zsh
+
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/command-not-found", from:oh-my-zsh
+zplug "plugins/fzf", from:oh-my-zsh
+
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+setopt prompt_subst # Make sure prompt is able to be generated properly.
+zplug "caiogondim/bullet-train.zsh", use:bullet-train.zsh-theme, defer:3 # defer until other plugins like oh-my-zsh is loaded
+
+BULLETTRAIN_PROMPT_ORDER=(
+  dir
+  git
+)
+bindkey '^r' fzf-history-widget
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load

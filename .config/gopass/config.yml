@@ -1,0 +1,46 @@
+root:
+  askformore: false
+  autoimport: true
+  autosync: true
+  cliptimeout: 45
+  noconfirm: false
+  nopager: false
+  path: /Users/ms2/.password-store
+  safecontent: false
+  usesymbols: false
+  nocolor: false
+mounts:
+  lab25_common:
+    askformore: false
+    autoimport: true
+    autosync: true
+    cliptimeout: 45
+    noconfirm: false
+    nopager: false
+    path: /Users/ms2/src/labtwentyfive/passwords
+    safecontent: false
+    usesymbols: false
+    nocolor: false
+  lab25_ops:
+    askformore: false
+    autoimport: true
+    autosync: true
+    cliptimeout: 45
+    noconfirm: false
+    nopager: false
+    path: /Users/ms2/src/labtwentyfive/ops-passwords
+    safecontent: false
+    usesymbols: false
+    nocolor: false
+  onnest:
+    askformore: false
+    autoimport: true
+    autosync: true
+    cliptimeout: 45
+    noconfirm: false
+    nopager: false
+    path: /Users/ms2/src/labtwentyfive/onnest-passwords
+    safecontent: false
+    usesymbols: false
+    nocolor: false
+version: 1.6.10

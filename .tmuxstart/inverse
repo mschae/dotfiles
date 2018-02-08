@@ -1,0 +1,11 @@
+base_path=~/src/inverse
+
+new_session -c $base_path/deploy
+rename 0 deploy
+split deploy -v -c $base_path/deploy
+
+for project in morgue diplomat sorta flatiron
+do
+  new_window -n $project -c $base_path/$project
+  split $project -v -c $base_path/$project
+done
