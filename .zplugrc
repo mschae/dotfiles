@@ -1,3 +1,5 @@
+ZPLUG_HOME=$HOME/.zplug
+
 PROMPT_LEAN_TMUX=""
 PROMPT_LEAN_COLOR1="242"
 PROMPT_LEAN_COLOR2="blue"
@@ -9,7 +11,6 @@ if [ -f $ZPLUG_HOME/init.zsh ]; then
   zplug "plugins/ssh-agent", from:oh-my-zsh, ignore:oh-my-zsh.sh
   # Load after ssh-agent
   zplug "plugins/gpg-agent", from:oh-my-zsh, ignore:oh-my-zsh.sh
-  zplug "plugins/sudo", from:oh-my-zsh, ignore:oh-my-zsh.sh
 
   zplug "b4b4r07/enhancd", as:command
   zplug "caarlos0/zsh-mkc", as:command
@@ -21,6 +22,8 @@ if [ -f $ZPLUG_HOME/init.zsh ]; then
   zplug "zsh-users/zsh-completions"
   zplug "zsh-users/zsh-history-substring-search"
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+  zplug "mollifier/anyframe"
 
   zplug "miekg/lean"
 

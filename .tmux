@@ -1,1 +1,0 @@
-BTSync/dotfiles/.tmux
