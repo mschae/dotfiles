@@ -1,27 +1,37 @@
-source ~/.zplug/init.zsh
+PROMPT_LEAN_TMUX=""
+PROMPT_LEAN_COLOR1="242"
+PROMPT_LEAN_COLOR2="blue"
+ENHANCD_COMMAND="ecd"
 
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/command-not-found", from:oh-my-zsh
-zplug "plugins/fzf", from:oh-my-zsh
+if [ -f $ZPLUG_HOME/init.zsh ]; then
+  source $ZPLUG_HOME/init.zsh
 
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+  zplug "plugins/ssh-agent", from:oh-my-zsh, ignore:oh-my-zsh.sh
+  # Load after ssh-agent
+  zplug "plugins/gpg-agent", from:oh-my-zsh, ignore:oh-my-zsh.sh
+  zplug "plugins/sudo", from:oh-my-zsh, ignore:oh-my-zsh.sh
 
-setopt prompt_subst # Make sure prompt is able to be generated properly.
-zplug "caiogondim/bullet-train.zsh", use:bullet-train.zsh-theme, defer:3 # defer until other plugins like oh-my-zsh is loaded
+  zplug "b4b4r07/enhancd", as:command
+  zplug "caarlos0/zsh-mkc", as:command
+  zplug "marzocchi/zsh-notify", use:"notify.plugin.zsh"
+  zplug "mrowa44/emojify", as:command
+  zplug "oconnor663/zsh-sensible"
+  zplug "rimraf/k", as:command
+  zplug "zlsun/solarized-man"
+  zplug "zsh-users/zsh-completions"
+  zplug "zsh-users/zsh-history-substring-search"
+  zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
-BULLETTRAIN_PROMPT_ORDER=(
-  dir
-  git
-)
-bindkey '^r' fzf-history-widget
+  zplug "miekg/lean"
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check; then
-    printf "Install? [y/N]: "
+  # Install plugins if there are plugins that have not been installed
+  if ! zplug check --verbose; then
+    printf "Install zsh plugins? [y/N]: "
     if read -q; then
-        echo; zplug install
+      echo; zplug install
     fi
-fi
+  fi
 
-# Then, source plugins and add commands to $PATH
-zplug load
+  # Then, source plugins and add commands to $PATH
+  zplug load # --verbose
+fi
