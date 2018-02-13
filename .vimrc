@@ -5,7 +5,6 @@ set encoding=utf-8
 if has("autocmd")
 	" Apply changes to vimconfig automatically
 	autocmd BufWritePost .vimrc source ~/.vimrc
-	autocmd BufWritePost Vundlefile source ~/.vim/Vundlefile
 	autocmd BufWritePost mappings.vim source ~/.vim/mappings.vim
 
 	" Automatically delete trailing whitespaces
@@ -63,7 +62,7 @@ set ignorecase
 set smartcase
 
 " Use vundle
-source ~/.vim/Vundlefile
+source ~/.vim/Bundlefile.vim
 source ~/.vim/mappings.vim
 
 set guifont=Inconsolata-dz\ for\ Powerline:h11

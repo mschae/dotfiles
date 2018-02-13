@@ -26,6 +26,8 @@ export LC_ALL=en_US.UTF-8
 source "$HOME/.asdf/asdf.sh"
 source "$HOME/.zplugrc"
 
+BREW_PREFIX=/usr/local
+
 if [[ -d "$BREW_PREFIX/opt/fzf" ]]; then
   source "$BREW_PREFIX/opt/fzf/shell/completion.zsh"
   source "$BREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
