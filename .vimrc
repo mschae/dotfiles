@@ -86,3 +86,10 @@ let g:bufferline_echo=0
 let g:gutentags_cache_dir = '~/.tags_cache'
 autocmd! BufWritePost * Neomake
 let g:deoplete#enable_at_startup = 1
+
+" Spaces & Tabs
+set tabstop=4     " number of visual spaces per TAB
+set softtabstop=4 " number of spaces in tab when editing
+set expandtab     " tabs are spaces
+filetype plugin indent on
+

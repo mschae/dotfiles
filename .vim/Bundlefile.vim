@@ -41,5 +41,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'ciaranm/detectindent'
 Plug 'neomake/neomake'
+Plug 'christianrondeau/vim-base64'
 
 call plug#end()
