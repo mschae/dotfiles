@@ -3,22 +3,20 @@ set encoding=utf-8
 
 " Automatically broadcast changes to this file to all active vim instances
 if has("autocmd")
-	" Apply changes to vimconfig automatically
-	autocmd BufWritePost .vimrc source ~/.vimrc
-	autocmd BufWritePost mappings.vim source ~/.vim/mappings.vim
+  " Check for errros
+  " Automatically delete trailing whitespaces
+  autocmd! BufWritePost * Neomake
+  autocmd BufWritePre * :%s/\s\+$//e
 
-	" Automatically delete trailing whitespaces
-	autocmd BufWritePre * :%s/\s\+$//e
+  " Load Nerdtree upon opening vim
+  autocmd vimenter * NERDTree
 
-	" Load Nerdtree upon opening vim
-	autocmd vimenter * NERDTree
+  " Toggle between relative and absolute line numbering
+  autocmd FocusLost * :set number
+  autocmd FocusGained * :set relativenumber
 
-	" Toggle between relative and absolute line numbering
-	autocmd FocusLost * :set number
-	autocmd FocusGained * :set relativenumber
-
-	autocmd InsertEnter * :set number
-	autocmd InsertLeave * :set relativenumber
+  autocmd InsertEnter * :set number
+  autocmd InsertLeave * :set relativenumber
 endif
 
 " Core stuff
@@ -33,13 +31,13 @@ set relativenumber
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
 if exists("&undodir")
-	set undodir=~/.vim/undo
+  set undodir=~/.vim/undo
 endif
 set noswapfile
 
 " Mouse support
 if has("mouse")
-	set mouse=a
+  set mouse=a
 endif
 
 " Be diligent about the 80 column rule
@@ -50,7 +48,7 @@ match OverLength /\%81v.\+/
 
 let NERDTreeShowHidden=1
 
-set listchars=nbsp:¬,extends:»,precedes:«,trail:•
+set list listchars=tab:»·,trail:·
 
 set bs=2
 
@@ -68,28 +66,45 @@ source ~/.vim/mappings.vim
 set guifont=Inconsolata-dz\ for\ Powerline:h11
 
 try
-	color solarized
-	set background=dark
+  color solarized
+  set background=dark
 catch
 endtry
-
-syntax on
 
 let g:deoplete#enable_at_startup = 1
 
 let g:airline_powerline_fonts=1
 let g:airline_theme='solarized'
-let g:airline_extensions=['branch', 'tabline', 'neomake']
 
-let g:bufferline_echo=0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 let g:gutentags_cache_dir = '~/.tags_cache'
-autocmd! BufWritePost * Neomake
+
 let g:deoplete#enable_at_startup = 1
 
 " Spaces & Tabs
-set tabstop=4     " number of visual spaces per TAB
-set softtabstop=4 " number of spaces in tab when editing
-set expandtab     " tabs are spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
 filetype plugin indent on
 
+" deoplete
+let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h>
+      \ deolete#mappings#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>
+      \ deoplete#mappings#smart_close_popup()."\<C-h>"
+ set completeopt+=noinsert
+ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" neosnippet
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets, ~/.vim/snippets'
