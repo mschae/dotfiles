@@ -5,7 +5,6 @@ set encoding=utf-8
 if has("autocmd")
   " Check for errros
   " Automatically delete trailing whitespaces
-  autocmd! BufWritePost * Neomake
   autocmd BufWritePre * :%s/\s\+$//e
 
   " Load Nerdtree upon opening vim
@@ -71,8 +70,6 @@ try
 catch
 endtry
 
-let g:deoplete#enable_at_startup = 1
-
 let g:airline_powerline_fonts=1
 let g:airline_theme='solarized'
 
@@ -81,8 +78,6 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 let g:gutentags_cache_dir = '~/.tags_cache'
 
-let g:deoplete#enable_at_startup = 1
-
 " Spaces & Tabs
 set tabstop=2
 set shiftwidth=2
@@ -90,21 +85,27 @@ set expandtab
 
 filetype plugin indent on
 
-" deoplete
-let g:deoplete#auto_complete_start_length = 1
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h>
-      \ deolete#mappings#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>
-      \ deoplete#mappings#smart_close_popup()."\<C-h>"
- set completeopt+=noinsert
- inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+if has('nvim')
+  " deoplete
+  let g:deoplete#auto_complete_start_length = 1
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#enable_smart_case = 1
 
-" neosnippet
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets, ~/.vim/snippets'
+  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+        \ "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+  inoremap <expr><C-h>
+        \ deolete#mappings#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS>
+        \ deoplete#mappings#smart_close_popup()."\<C-h>"
+  set completeopt+=noinsert
+  inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+
+  " neosnippet
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k> <Plug>(neosnippet_expand_target)
+  let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets, ~/.vim/snippets'
+end
+
+let g:neomake_verbose=1

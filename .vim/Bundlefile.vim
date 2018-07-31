@@ -7,10 +7,11 @@ end
 " Core stuff
 "
 Plug 'tpope/vim-dispatch'
-Plug 'Chiel92/vim-autoformat'        " Automatic formats
 
 Plug '/usr/local/opt/fzf'            " Fuzzy finder
 Plug 'junegunn/fzf.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'w0rp/ale'
 
 " Navigation
 Plug 'tpope/vim-unimpaired'
@@ -18,7 +19,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'rizzatti/dash.vim'
 Plug 'FooSoft/vim-argwrap'
 
 " Visualization
@@ -44,7 +44,6 @@ Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'ciaranm/detectindent'
-Plug 'neomake/neomake'
 Plug 'christianrondeau/vim-base64'
 
 call plug#end()

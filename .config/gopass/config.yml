@@ -32,15 +32,4 @@ mounts:
     safecontent: false
     usesymbols: false
     nocolor: false
-  onnest:
-    askformore: false
-    autoimport: true
-    autosync: true
-    cliptimeout: 45
-    noconfirm: false
-    nopager: false
-    path: /Users/ms2/src/labtwentyfive/onnest-passwords
-    safecontent: false
-    usesymbols: false
-    nocolor: false
-version: 1.6.10
+version: 1.6.11

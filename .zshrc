@@ -18,7 +18,7 @@ unsetopt correct_all
 
 BREW_PREFIX=/usr/local
 
-export FZF_TUMX=1
+export FZF_TMUX=1
 
 if [[ -d "$BREW_PREFIX/opt/fzf" ]]; then
   source "$BREW_PREFIX/opt/fzf/shell/completion.zsh"
@@ -41,6 +41,9 @@ if [[ -x `which ag` ]]; then
   export FZF_DEFAULT_COMMAND='ag -l -g ""'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
+
+source /usr/local/etc/profile.d/z.sh
+
 
 export SSH_AGENT_PID=""
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
