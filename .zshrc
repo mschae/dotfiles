@@ -18,23 +18,9 @@ unsetopt correct_all
 
 BREW_PREFIX=/usr/local
 
-export FZF_TMUX=1
-
 if [[ -d "$BREW_PREFIX/opt/fzf" ]]; then
   source "$BREW_PREFIX/opt/fzf/shell/completion.zsh"
   source "$BREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
-fi
-
-# Teleconsole does not preserve TMUX env variable
-if [[ -z "$TMUX" ]] && [[ -z "$TELEPORT_SESSION" ]]; then
-  # Attempt to discover a detached session and attach it, else create a new
-  # session
-  CURRENT_USER=$(whoami)
-  if tmux has-session -t $CURRENT_USER 2>/dev/null; then
-    tmux attach-session -t $CURRENT_USER
-  else
-    tmux new-session -s $CURRENT_USER
-  fi
 fi
 
 if [[ -x `which ag` ]]; then

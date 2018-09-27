@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/ms2/src/inverse/jsondp/.git/hooks'
 let g:netrw_dirhist_2='/Users/ms2/.tmuxstart'
 let g:netrw_dirhist_3='/Users/ms2/src/labtwentyfive/wlbank-sftp'
+let g:netrw_dirhist_4='/Users/ms2/src/labtwentyfive/immobook'
